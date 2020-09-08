@@ -8,7 +8,9 @@ module.exports = {
       .rule('svg-sprite')
       .test(/\.svg$/)
       .include.add(dir).end() // 只包含icons
-      .use('svg-sprite-loader').loader('svg-sprite-loader').options({extract: false}).end();
+      .use('svg-sprite-loader').loader('svg-sprite-loader').options({extract: false}).end()
+      .use('svgo-loader').loader('svgo-loader') // 删除 svg fill 属性
+      .tap(options => ({...options, plugins: [{removeAttrs: {attrs: 'fill'}}]})).end()
     config.plugin('svg-sprite').use(require('svg-sprite-loader/plugin'), [{pluginSprite: true}]);
     config.module.rule('svg').exclude.add(dir); // 其他 svg 排除 icons 目录
   }
