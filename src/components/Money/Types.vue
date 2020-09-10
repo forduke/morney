@@ -9,50 +9,18 @@
 
 <script lang="ts">
   import Vue from 'vue';
-  import {Component, Prop} from 'vue-property-decorator';
+  import {Component} from 'vue-property-decorator';
   
   @Component
   export default class Types extends Vue {
-    @Prop(Number) xxx: number | undefined;
     type = '-'; // '-'表示支出，'+'表示收入
-    
     selectType(type: string) {
       if (type !== '-' && type !== '+') { // type 只能是 '-' 或'+'
         throw new Error('type is unknown');
       }
       this.type = type;
     }
-    
-    mounted() {
-      if (this.xxx === undefined) {
-        console.log('undefined');
-      } else {
-        console.log(this.xxx);
-      }
-    }
   }
-  
-  // export default {
-  //   name: 'Types',
-  //   props: ['xxx'],
-  //   data() {
-  //       return {
-  //         type: '-' // '-'表示支出，'+'表示收入
-  //       }
-  //   },
-  //   mounted() {
-  //     console.log(this.xxx);
-  //   },
-  //   methods: {
-  //     selectType(type) {
-  //       console.log(type);
-  //       console.log(this);
-  //       if (type !== '-' && type !== '+') {
-  //         throw new Error('type is unknown')
-  //       }
-  //     }
-  //   }
-  // };
 </script>
 
 <style lang="scss" scoped>
