@@ -13,47 +13,46 @@
 </template>
 
 <script lang="ts">
-export default {
-  name: 'Tags'
-};
+  export default {
+    name: 'Tags'
+  };
 </script>
 
 <style lang="scss" scoped>
-
-.tags {
-  padding: 16px;
-  font-size: 14px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column-reverse;
-
-  > .current {
+  .tags {
+    padding: 16px;
+    font-size: 14px;
+    flex-grow: 1;
     display: flex;
-    flex-wrap: wrap;
-    overflow: auto;
-
-    > li {
-      background: #d9d9d9;
-      $h: 24px;
-      height: $h;
-      line-height: $h;
-      padding: 0 16px;
-      margin-right: 12px;
-      margin-top: 10px;
-      border-radius: ($h/2);
+    flex-direction: column-reverse;
+    
+    > .current {
+      display: flex;
+      flex-wrap: wrap;
+      overflow: auto;
+      
+      > li {
+        background: #d9d9d9;
+        $h: 24px;
+        height: $h;
+        line-height: $h;
+        padding: 0 16px;
+        margin-right: 12px;
+        margin-top: 10px;
+        border-radius: ($h/2);
+      }
+    }
+    
+    > .new {
+      padding-top: 16px;
+      
+      button {
+        background: transparent;
+        border: none;
+        color: #999;
+        border-bottom: 1px solid;
+        padding: 0 3px;
+      }
     }
   }
-
-  > .new {
-    padding-top: 16px;
-
-    button {
-      background: transparent;
-      border: none;
-      color: #999;
-      border-bottom: 1px solid;
-      padding: 0 3px;
-    }
-  }
-}
 </style>

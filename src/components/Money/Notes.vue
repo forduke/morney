@@ -8,30 +8,29 @@
 </template>
 
 <script lang="ts">
-export default {
-  name: 'Notes'
-};
+  export default {
+    name: 'Notes'
+  };
 </script>
 
 <style lang="scss" scoped>
-
-.notes {
-  background: #f5f5f5;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  padding-left: 16px;
-
-  .name {
-    padding-right: 16px;
+  .notes {
+    background: #f5f5f5;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    
+    .name {
+      padding-right: 16px;
+    }
+    
+    input {
+      line-height: 64px;
+      flex-grow: 1;
+      border: none;
+      background: transparent;
+    }
   }
-
-  input {
-    line-height: 64px;
-    flex-grow: 1;
-    border: none;
-    background: transparent;
-  }
-}
 
 </style>
