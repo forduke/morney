@@ -20,7 +20,7 @@
   
   @Component
   export default class Tags extends Vue {
-    @Prop() dataSource: string[] | undefined;
+    @Prop(Array) dataSource: string[] | undefined;
     selectTags: string[] = [];
     
     toggle(tag: string) {
@@ -30,6 +30,7 @@
       } else {
         this.selectTags.push(tag);
       }
+      this.$emit('update:value', this.selectTags)
     }
     
     create() {
