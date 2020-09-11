@@ -1,9 +1,9 @@
 <template>
   <Layout class-prefix="layout">
     <NumberPad/>
-    <Types :xxx="333"/>
+    <Types/>
     <Notes/>
-    <Tags/>
+    <Tags :dataSource="['衣','食','住','行','娱乐']"/>
   </Layout>
 </template>
 
